@@ -17,4 +17,14 @@ describe('Creating records', () => {
         done();
       });
   });
+
+  it('can remove an existing sub document', (done) => {
+    const joe = new User({
+      name: 'Joe',
+      posts: [{ title: 'New Title' }]
+    });
+
+    joe.save()
+      .then(() => {})
+  });
 });
